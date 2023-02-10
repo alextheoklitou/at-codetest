@@ -1,13 +1,10 @@
-import './App.css';
+import React from 'react'
+import SearchResults from './components/SearchResults';
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
-  );
+    <SearchResults />
+  )
 }
 
-export default App;
+export default App
