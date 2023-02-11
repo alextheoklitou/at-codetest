@@ -8,3 +8,9 @@
 .memoirs-font {
   font-family: 
 }
+
+html, body, #root, #root>div {
+  height: 100%;
+  padding-top: 0;
+  margin-top: 0;
+}

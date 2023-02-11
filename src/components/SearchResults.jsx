@@ -40,13 +40,13 @@ function SearchResults() {
   console.log(error)
   return (
     <>
-      <div className='w-full mt-10'>
+      <div className='w-full h-full mt-10 bg-gradient-to-b from-cyan-500 to-indigo-500'>
         <div className='w-full flex flex-col items-center'>
-          <h1 className='font-alice text-3xl mt-3 mb-1'>Attraction Tickets Code Test</h1>
+          <h1 className='font-alice text-3xl mt-14 mb-1'>Attraction Tickets Code Test</h1>
           <h2 className='font-alice text-2xl mb-4'>Alex Theoklitou</h2>
           <form className='flex flex-wrap w-2/5 mb-4' onSubmit={sendRequest}>
             <input className='flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Search...' onChange={handleType} />
-            <button className='bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 ml-4 rounded uppercase'>Search</button>
+            <button className='bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 ml-4 rounded uppercase'>Search</button>
           </form>
           {isLoading && (
             <Loading />
