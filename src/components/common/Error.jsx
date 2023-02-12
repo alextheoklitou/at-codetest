@@ -15,7 +15,7 @@ function Error({ errorNumber }) {
           <h2 className='font-arimo text-xl'>Please try again later.</h2>
           </>
         }
-        <img className="object-center" alt='mickey mouse crying' src={error} />
+        <img className="object-center" alt='minney mouse crying' src={error} />
       </div>
     </div>
   )

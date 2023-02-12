@@ -5,12 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Nunito+Sans:wght@200&family=Signika:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Arimo&family=Nunito+Sans:wght@200&family=Signika:wght@300&display=swap');
 
-.memoirs-font {
-  font-family: 
-}
-
 html, body, #root, #root>div {
   height: 100%;
-  padding-top: 0;
-  margin-top: 0;
+  padding: 0;
+  margin: 0;
 }
