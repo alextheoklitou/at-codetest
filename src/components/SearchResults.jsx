@@ -55,11 +55,11 @@ function SearchResults() {
     <>
       <div>
         <div className='min-h-screen w-full flex flex-col items-center pb-10 bg-gradient-to-b from-blue-200 to-white bg-fixed'>
-          <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-500 font-extralight text-3xl mb-1 tracking-widest`}>Attraction Tickets Code Test</h1>
+          <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-700 font-extralight text-3xl mb-1 tracking-widest`}>Attraction Tickets Code Test</h1>
           <h2 className={`${searchResults || isError || isLoading ? 'mb-4' : 'mb-10'} font-extralight text-l mb-4 tracking-widest`}>Alex Theoklitou</h2>
           <form className='flex flex-wrap w-1/3 mb-4' onSubmit={sendRequest}>
             <input className='font-extralight flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Find your next holiday...' onChange={handleType} />
-            <button className='font-extralight bg-blue-800 hover:bg-blue-900 text-white py-2 px-4 ml-4 rounded uppercase'>Search</button>
+            <button className='font-light bg-button-yellow hover:bg-button-yellow-hover text-white py-2 px-4 ml-4 rounded uppercase'>Search</button>
           </form>
           {isLoading && (
             <Loading />
@@ -76,9 +76,10 @@ function SearchResults() {
                   )}
                 </tbody>
               </table>
-              {totalResults !== searchResults.length &&
-                <button className='mt-3 font-extralight bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 ml-4 rounded uppercase w-36 h-10' onClick={loadMore}>{isLoadingMore ? <LoadingMore /> : 'Load More'}</button>
+              {totalResults !== searchResults.length && !isLoadingMore &&
+                <button className='mt-3 font-light bg-button-yellow hover:bg-button-yellow-hover  text-white py-2 px-4 ml-4 rounded uppercase w-36 h-10' onClick={loadMore}>Load More</button>
               }
+              {isLoadingMore && totalResults !== searchResults.length && <LoadingMore />}
             </div>
           )}
         </div>

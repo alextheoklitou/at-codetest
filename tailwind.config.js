@@ -4,9 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'alice': ['Alice', 'serif'],
-        'arimo': ['Arimo', 'sans-serif'],
+      colors: {
+        'button-yellow': '#ffa414',
+        'button-yellow-hover': '#ffb643'
       },
     },
   },
