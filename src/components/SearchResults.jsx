@@ -8,6 +8,7 @@ import LoadingMore from './common/LoadingMore'
 function SearchResults() {
   const [searchResults, setSearchResults] = useState(null)
   const [searchValue, setSearchValue] = useState(null)
+  const [language, setLanguage] = useState('en')
   const [input, setInput] = useState(null)
   const [isError, setIsError] = useState(false)
   const [error, setError] = useState(null)
@@ -15,6 +16,10 @@ function SearchResults() {
   const [totalResults, setTotalResults] = useState(null)
   const isLoading = searchValue && !searchResults && !isError
   const isLoadingMore = searchResults && searchResults.length !== resultsNumber
+
+  const chooseLanguage = (e) => {
+    setLanguage(e.target.value)
+  }
 
   const handleType = (e) => {
     setInput(encodeURI(e.target.value))
@@ -36,7 +41,7 @@ function SearchResults() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await getSearchResults(searchValue)
+        const { data } = await getSearchResults(language, searchValue)
         setSearchResults(data.data)
         setTotalResults(data.meta.total_count)
       } catch (err) {
@@ -47,8 +52,7 @@ function SearchResults() {
     if (searchValue) {
       getData()
     }
-  }, [searchValue])
-
+  }, [language, searchValue])
 
 
   return (
@@ -56,7 +60,8 @@ function SearchResults() {
       <div>
         <div className='min-h-screen w-full flex flex-col items-center pb-10 bg-gradient-to-b from-blue-200 to-white bg-fixed'>
           <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-700 font-extralight text-3xl mb-1 tracking-widest`}>Attraction Tickets Code Test</h1>
-          <h2 className={`${searchResults || isError || isLoading ? 'mb-4' : 'mb-10'} font-extralight text-l mb-4 tracking-widest`}>Alex Theoklitou</h2>
+          <h2 className='font-extralight text-l mb-1 tracking-widest'>Alex Theoklitou</h2>
+          <div className='mb-4'><button className={`${language === 'en' ? 'font-bold' : ''} uppercase`} value='en' onClick={chooseLanguage}>en</button><span> | </span><button className={`${language === 'de-de' ? 'font-bold' : ''} uppercase`} value='de-de' onClick={chooseLanguage}>de</button></div>
           <form className='flex flex-wrap w-1/3 mb-4' onSubmit={sendRequest}>
             <input className='font-extralight flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Find your next holiday...' onChange={handleType} />
             <button className='font-light bg-button-yellow hover:bg-button-yellow-hover text-white py-2 px-4 ml-4 rounded uppercase'>Search</button>

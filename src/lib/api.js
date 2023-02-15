@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const baseUrl = 'https://global.atdtravel.com/api/products?geo=en'
+const baseUrl = 'https://global.atdtravel.com/api/products?geo='
 
-export function getSearchResults(searchValue) {
-  return axios.get(`${baseUrl}&title=${searchValue}`)
+export function getSearchResults(language, searchValue) {
+  return axios.get(`${baseUrl + language}&title=${searchValue}`)
 }
