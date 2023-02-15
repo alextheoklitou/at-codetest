@@ -19,6 +19,8 @@ function SearchResults() {
 
   const chooseLanguage = (e) => {
     setLanguage(e.target.value)
+    setSearchResults(null)
+    setSearchValue(searchValue)
   }
 
   const handleType = (e) => {
@@ -61,7 +63,7 @@ function SearchResults() {
         <div className='min-h-screen w-full flex flex-col items-center pb-10 bg-gradient-to-b from-blue-200 to-white bg-fixed'>
           <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-700 font-extralight text-3xl mb-1 tracking-widest`}>Attraction Tickets Code Test</h1>
           <h2 className='font-extralight text-l mb-1 tracking-widest'>Alex Theoklitou</h2>
-          <div className='mb-4'><button className={`${language === 'en' ? 'font-bold' : ''} uppercase`} value='en' onClick={chooseLanguage}>en</button><span> | </span><button className={`${language === 'de-de' ? 'font-bold' : ''} uppercase`} value='de-de' onClick={chooseLanguage}>de</button></div>
+          <div className='mb-4'><button className={`${language === 'en' ? 'font-bold' : 'font-light'} uppercase`} value='en' onClick={chooseLanguage}>en</button><span> | </span><button className={`${language === 'de-de' ? 'font-bold' : 'font-light'} uppercase`} value='de-de' onClick={chooseLanguage}>de</button></div>
           <form className='flex flex-wrap w-1/3 mb-4' onSubmit={sendRequest}>
             <input className='font-extralight flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Find your next holiday...' onChange={handleType} />
             <button className='font-light bg-button-yellow hover:bg-button-yellow-hover text-white py-2 px-4 ml-4 rounded uppercase'>Search</button>
@@ -77,7 +79,7 @@ function SearchResults() {
               <table className='w-full text-sm text-left border-separate border-spacing-y-2'>
                 <tbody className='font-light'>
                   {searchResults.map(result =>
-                    <ResultsDisplay key={result.id} {...result} />
+                    <ResultsDisplay key={result.id} {...result} language={language}/>
                   )}
                 </tbody>
               </table>

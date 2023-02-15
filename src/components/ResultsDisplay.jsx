@@ -1,6 +1,5 @@
-function ResultsDisplay({ img_sml, title, dest, price_from_all }) {
+function ResultsDisplay({ img_sml, title, dest, price_from_all, language }) {
   return (
-
     <>
       <tr className='bg-white text-gray-900 shadow-md rounded'>
         <th scope='row'>
@@ -11,7 +10,7 @@ function ResultsDisplay({ img_sml, title, dest, price_from_all }) {
             <div className='flex flex-col'>
             {price_from_all.map(price => {
               return <div key={price.desc}>
-                <p>{price.desc} - <span className='text-green-500 font-bold'>£{price.price_from}</span></p>
+                <p>{price.desc} - <span className='text-green-500 font-bold'>{language === 'en' ?  '£' : '€'}{price.price_from}</span></p>
                 </div>
             })}
             </div>
