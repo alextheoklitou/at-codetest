@@ -3,6 +3,11 @@ The task is to create a simple product search page using whatever language/tech 
 
 API used: [Attraction Tickets API](https://global.atdtravel.com/api/products?geo=en)
 
+# Deployment
+The task has been deployed using Netlify.
+
+Deployed URL: [AT Code Test](https://at-codetest.netlify.app/)
+
 # Frameworks and Libraries Used
 * React - project boostrapped with [Create React App](https://github.com/facebook/create-react-app)
 * [Axios](https://axios-http.com/docs/intro) - a promise-based HTTP Client
