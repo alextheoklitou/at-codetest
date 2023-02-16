@@ -1,4 +1,4 @@
-function ResultsDisplay({ img_sml, title, dest, price_from_all, language }) {
+function TableRow({ img_sml, title, dest, price_from_all, language }) {
   return (
     <>
       <tr className='bg-white text-gray-900 shadow-md'>
@@ -23,4 +23,4 @@ function ResultsDisplay({ img_sml, title, dest, price_from_all, language }) {
   )
 }
 
-export default ResultsDisplay
+export default TableRow

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getSearchResults } from '../lib/api.js'
-import ResultsDisplay from './ResultsDisplay'
+import TableRow from './TableRow'
 import Error from './common/Error'
 import Loading from './common/Loading'
 import LoadingMore from './common/LoadingMore'
@@ -79,7 +79,7 @@ function SearchResults() {
               <table className='w-full text-sm text-left border-separate border-spacing-y-2'>
                 <tbody className='font-light'>
                   {searchResults.map(result =>
-                    <ResultsDisplay key={result.id} {...result} language={language}/>
+                    <TableRow key={result.id} {...result} language={language}/>
                   )}
                 </tbody>
               </table>

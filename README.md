@@ -75,7 +75,7 @@ I also used the `total_count` key from the results returned and conditional form
               }
 ```
 * Created an `Error` component which is displayed when the `isError` variable is set to true which happens when the search doesn’t return any results.
-* Created a `Loading` component and this is displayed when the `isLoading` boolean variable is set as true. This happens when the `searchValue` is set but the `searchResults` haven’t been returned yet and there is no error like so `/const/ isLoading = searchValue && !searchResults && !isError`
+* Created a `Loading` component and this is displayed when the `isLoading` boolean variable is set as true. This happens when the `searchValue` is set but the `searchResults` haven’t been returned yet and there is no error like so `const isLoading = searchValue && !searchResults && !isError`
 * I also used Tailwind’s media query classes to create a mobile responsive result.
 
 # General Notes
