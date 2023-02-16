@@ -1,6 +1,6 @@
 import loading from '../../assets/loading.gif'
 
-function Loading(language) {
+function Loading({ language }) {
   return (
     <div className='flex justify-center mt-10'>
       <div className='flex flex-col w-full items-center'>
