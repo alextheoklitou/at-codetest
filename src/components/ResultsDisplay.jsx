@@ -1,7 +1,7 @@
 function ResultsDisplay({ img_sml, title, dest, price_from_all, language }) {
   return (
     <>
-      <tr className='bg-white text-gray-900 shadow-md rounded'>
+      <tr className='bg-white text-gray-900 shadow-m'>
         <th scope='row'>
           <img src={img_sml} alt={`activity from ${title}`} className='w-52' /></th>
         <td className='px-6 py-3 border'>{title}

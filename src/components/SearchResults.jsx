@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getSearchResults } from '../lib/api'
+import { getSearchResults } from '../lib/api.js'
 import ResultsDisplay from './ResultsDisplay'
 import Error from './common/Error'
 import Loading from './common/Loading'
@@ -61,21 +61,21 @@ function SearchResults() {
     <>
       <div>
         <div className='min-h-screen w-full flex flex-col items-center pb-10 bg-gradient-to-b from-blue-200 to-white bg-fixed'>
-          <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-700 font-extralight text-3xl mb-1 tracking-widest`}>Attraction Tickets Code Test</h1>
+          <h1 className={`${searchResults || isError || isLoading ? 'mt-14 mb-1' : 'mt-60 mb-2'} transform duration-700 font-extralight text-3xl tracking-widest text-center mx-6`}>Attraction Tickets Code Test</h1>
           <h2 className='font-extralight text-l mb-1 tracking-widest'>Alex Theoklitou</h2>
-          <div className='mb-4'><button className={`${language === 'en' ? 'font-bold' : 'font-light'} uppercase`} value='en' onClick={chooseLanguage}>en</button><span> | </span><button className={`${language === 'de-de' ? 'font-bold' : 'font-light'} uppercase`} value='de-de' onClick={chooseLanguage}>de</button></div>
-          <form className='flex flex-wrap w-1/3 mb-4' onSubmit={sendRequest}>
-            <input className='font-extralight flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Find your next holiday...' onChange={handleType} />
-            <button className='font-light bg-button-yellow hover:bg-button-yellow-hover text-white py-2 px-4 ml-4 rounded uppercase'>Search</button>
+          <div className='mb-2'><button className={`${language === 'en' ? 'font-bold' : 'font-light'} uppercase`} value='en' onClick={chooseLanguage}>en</button><span> | </span><button className={`${language === 'de-de' ? 'font-bold' : 'font-light'} uppercase`} value='de-de' onClick={chooseLanguage}>de</button></div>
+          <form className='flex flex-col sm:flex-row items-center w-1/3 mb-4' onSubmit={sendRequest}>
+            <input className='font-extralight flex-auto px-3 py-1.5 text-gray-700 bg-white border border-solid border-gray-300 rounded m-2 sm-m-0 focus:text-gray-700 focus:border-blue-600 focus:outline-none' placeholder='Find your next holiday...' onChange={handleType} />
+            <button className='font-light bg-button-yellow hover:bg-button-yellow-hover text-white py-1.5 px-3 sm:ml-4 rounded uppercase'>Search</button>
           </form>
           {isLoading && (
-            <Loading />
+            <Loading language={language} />
           )}
           {isError && (
-            <Error errorNumber={error} />
+            <Error errorNumber={error} language={language}/>
           )}
           {searchResults && searchValue && !isError && (
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center mx-5 sm:mx-0'>
               <table className='w-full text-sm text-left border-separate border-spacing-y-2'>
                 <tbody className='font-light'>
                   {searchResults.map(result =>

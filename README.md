@@ -15,7 +15,7 @@ Deployed URL: [AT Code Test](https://at-codetest.netlify.app/)
 
 # Additional Features
 * Change language from English to German by changing the 'geo' parameter in the API
-* Loading more than 10 retults by altering the 'limit' paremeter in the API
+* Loading more than 10 results by altering the 'limit' paremeter in the API
 * Loading feature for when the query hasn't returned yet
 * Error handling for when the query has not returned any results
 
