@@ -8,16 +8,14 @@ function TableRow({ img_sml, title, dest, price_from_all, language }) {
           <div className='flex justify-between pt-3'>
             <p>{dest}</p>
             <div className='flex flex-col'>
-            {price_from_all.map(price => {
-              return <div key={price.desc}>
-                <p>{price.desc} - <span className='text-green-500 font-bold'>{language === 'en' ?  '£' : '€'}{price.price_from}</span></p>
+              {price_from_all.map(price => {
+                return <div key={price.desc}>
+                  <p>{price.desc} - <span className='text-green-500 font-bold'>{language === 'en' ? '£' : '€'}{price.price_from}</span></p>
                 </div>
-            })}
+              })}
             </div>
-
           </div>
         </td>
-
       </tr>
     </>
   )

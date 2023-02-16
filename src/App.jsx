@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchResults from './components/SearchResults';
+import SearchAndResults from './components/SearchAndResults'
 
 function App() {
   return (
-    <SearchResults />
+    <SearchAndResults />
   )
 }
 
